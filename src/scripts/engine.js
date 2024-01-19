@@ -29,6 +29,7 @@ function randomSquare(){
 }
 
 function gameOver(){
+    state.view.livesLeft.textContent = state.values.currentLives;
     clearInterval(state.actions.countDownTimerId);
     clearInterval(state.actions.timerId);
     setTimeout(function(){alert(`Game over! Seu resultado foi ${state.values.result}`)},1);
@@ -44,8 +45,9 @@ function addListenerHitbox(){
                 state.values.hitPosition = null;
             } else {
                 state.values.currentLives--;
-                state.view.livesLeft.textContent = state.values.currentLives;
-                if (state.values.currentLives == 0){
+                if (state.values.currentLives > 0){
+                    state.view.livesLeft.textContent = state.values.currentLives;
+                } else if (state.values.currentLives == 0){
                    gameOver();
                 }
             }
