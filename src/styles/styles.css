@@ -2,7 +2,7 @@ main{
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-image: url('/src/images/wall.PNG');
+    background-image: url(../images/wall.png);
 }
 
 .menu{
@@ -49,6 +49,6 @@ main{
 }
 
 .enemy{
-    background-image: url('/src/images/ralph.PNG');
+    background-image: url(../images/ralph.png);
     background-size: cover;
 }
